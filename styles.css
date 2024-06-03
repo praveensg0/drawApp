@@ -1,0 +1,233 @@
+/*===== GOOGLE FONTS =====*/
+@import url('https://fonts.googleapis.com/css2?family=Comic+Neue:wght@700&display=swap');
+
+/*===== VARIABLES CSS =====*/
+:root {
+    --header-height: 3rem;
+    --first-color: hsl(153, 83%, 41%);
+    --second-color: hsl(0, 66%, 7%);
+    --body-font: 'Comic Neue', sans-serif;
+    --big-font-size: 1.8rem;
+    --h2-font-size: 1.25rem;
+    --normal-font-size: 0.938rem;
+    --smaller-font-size: 0.75rem;
+    --mb-2: 1rem;
+    --mb-4: 2rem;
+    --mb-5: 2.5rem;
+    --mb-6: 3rem;
+    --z-back: -10;
+    --z-fixed: 100;
+}
+
+@media screen and (min-width: 968px) {
+    :root {
+        --big-font-size: 3.5rem;
+        --h2-font-size: 2rem;
+        --normal-font-size: 1rem;
+        --smaller-font-size: 0.875rem;
+    }
+}
+
+/*===== BASE =====*/
+*,
+::before,
+::after {
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    margin: 0;
+    font-family: var(--body-font);
+    font-size: var(--normal-font-size);
+    color: var(--second-color);
+    background-color: #f0f0f0;
+}
+
+h1,
+h2,
+p {
+    margin: 0;
+}
+
+ul {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+a {
+    text-decoration: none;
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+}
+
+/*===== CLASS CSS ===== */
+.section-title {
+    position: relative;
+    font-size: var(--h2-font-size);
+    color: var(--first-color);
+    margin-top: var(--mb-2);
+    margin-bottom: var(--mb-4);
+    text-align: center;
+}
+
+.section {
+    padding-top: 3rem;
+    padding-bottom: 2rem;
+}
+
+/*===== LAYOUT =====*/
+.bd-grid {
+    max-width: 1024px;
+    display: grid;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.l-header {
+    width: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: var(--z-fixed);
+    background-color: #fff;
+    box-shadow: 0 1px 4px rgba(146, 161, 176, 0.15);
+}
+
+/*===== NAV =====*/
+.nav {
+    height: var(--header-height);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-weight: 600;
+}
+
+.nav__menu {
+    display: none;
+}
+
+.nav__toggle {
+    display: block;
+    font-size: 1.5rem;
+    cursor: pointer;
+}
+
+.nav__logo {
+    font-size: 1.6rem;
+}
+
+/*Active menu*/
+.active::after {
+    position: absolute;
+    content: '';
+    width: 100%;
+    height: 0.18rem;
+    left: 0;
+    top: 2rem;
+    background-color: var(--first-color);
+}
+
+/*===== HOME =====*/
+.home {
+    position: relative;
+    row-gap: 5rem;
+    padding: 4rem 0 1rem;
+}
+
+.home__data {
+    align-self: center;
+    text-align: center;
+}
+
+.home__title {
+    font-size: var(--big-font-size);
+    color: var(--second-color);
+}
+
+.home__description {
+    font-size: 1.2rem;
+    color: var(--second-color);
+}
+
+/* Drawing Section */
+.drawing-section {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+}
+
+h3 {
+    text-align: center;
+}
+.toolbar-group {
+    display: flex;
+    justify-content: center;
+    gap: 1.5rem;
+}
+
+.toolbar {
+    flex: 1;
+    padding: 1rem;
+    background-color: #fff;
+    border-radius: 0.5rem;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.canvas-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    margin-top: 2rem;
+}
+
+#canvas {
+    border: 2px solid var(--second-color);
+    background-color: #fff;
+    border-radius: 0.5rem;
+    max-width: 100%;
+    height: auto;
+}
+
+/* Button Styles */
+.button {
+    background-color: var(--first-color);
+    color: #fff;
+    padding: 0.75rem 1.5rem;
+    font-weight: 600;
+    border-radius: 0.5rem;
+    margin: 5px;
+    transition: 0.3s;
+    cursor: pointer;
+}
+
+.button:hover {
+    box-shadow: 0px 10px 36px rgba(0, 0, 0, 0.15);
+}
+
+.toolbar__color, .toolbar__size {
+    margin: 5px;
+    padding: 5px;
+}
+
+/*===== FOOTER =====*/
+.footer {
+    background-color: #818181;
+    text-align: center;
+    padding: 2rem 0;
+}
+
+.footer p {
+    font-size: var(--smaller-font-size);
+    color: var(--second-color);
+}
